@@ -1,5 +1,8 @@
 package com.example.bookmanager.bookmanager.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -13,7 +16,11 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 @EqualsAndHashCode
 @Builder
+@Entity //primary key 필요
 public class User {
+    @Id
+    @GeneratedValue //순차적으로 값 증가
+    private Long id;
     @NonNull
     private String name;
     @NonNull
